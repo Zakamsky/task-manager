@@ -5,6 +5,12 @@
  * Date: 01.12.2019
  * Time: 13:49
  */
+
+ini_set('display_errors', 1);
+require_once 'app/bootstrap.php';
+
+// === old code =====
+/*
 include("config.php");
 //include("model.php");
 //error_reporting("e_notice");
@@ -29,7 +35,7 @@ else {
 $m = new $module;
 $output_method = $m -> output();
 
-//global $total_pages;
+
 ?>
 
 <!doctype html>
@@ -57,6 +63,10 @@ $output_method = $m -> output();
             }
             .card-footer{
                 min-height: 55px;
+            }
+            .task-row{
+                height: 390px;
+                align-items: stretch;
             }
         </style>
     </head>
@@ -136,7 +146,7 @@ $output_method = $m -> output();
                             </a>
                         </div>
                     </div>
-                    <div class="row my-5">
+                    <div class="row my-5 task-row">
 
                         <?php if (is_array($output_method))$tasks = $output_method;?>
                         <?php foreach ($tasks as $task): ?>
@@ -244,3 +254,4 @@ $output_method = $m -> output();
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </body>
 </html>
+*/
