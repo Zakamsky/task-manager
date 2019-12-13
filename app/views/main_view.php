@@ -54,7 +54,7 @@
                 <div class="card-header d-flex">
                     <h5 class="card-title mb-0"><?php echo $task['user_name']?></h5>
                     <?php if (isset($_COOKIE['user_login'])): ?>
-                        <a href="/?m=edittask&id=<?php echo $task['id']?>" class="card-link ml-auto disabled">edit</a>
+                        <a href="/edittask/index/?task_id=<?php echo $task['id']?>" class="card-link ml-auto disabled">edit</a>
                     <?php endif; ?>
                 </div>
                 <div class="card-body">
@@ -122,7 +122,7 @@
                             </span>
         </li>
 
-        <?php if((!isset($_GET['page']) && $total_pages > 3) || isset($_GET['page']) && ($_GET['page'] < $total_pages)): ?>
+        <?php if((!isset($_GET['page']) && $total_pages > 2) || isset($_GET['page']) && ($_GET['page'] < $total_pages)): ?>
 
             <li class="page-item">
                 <a class="page-link" href="<?php echo $pag_url_next; ?>">
