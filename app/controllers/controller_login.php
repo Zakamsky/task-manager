@@ -22,11 +22,9 @@ class Controller_Login extends Controller{
 
         if($_SERVER["REQUEST_METHOD"] == "POST") {
 
-            global $db; //todo: что то с этим надо сделать
-
             // username and password sent from form
-            $myusername = mysqli_real_escape_string($db,$_POST['username']);
-            $mypassword = mysqli_real_escape_string($db,$_POST['password']);
+            $myusername = $_POST['username'];
+            $mypassword = $_POST['password'];
         }
         $user = $this->model->get_user($myusername);
 

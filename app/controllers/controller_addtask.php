@@ -25,18 +25,12 @@ class Controller_Addtask extends Controller{
         );
 
         if($_SERVER["REQUEST_METHOD"] == "POST") {
-            // username and password sent from form
-            global $db; //todo: db
-            $taskname = mysqli_real_escape_string($db, $_POST['taskname']);
-            $taskemail = mysqli_real_escape_string($db, $_POST['taskemail']);
-            $tasktext = mysqli_real_escape_string($db,$_POST['tasktext']);
-            $regdate = time();
 
             $task = array(
-              'taskname' => $taskname,
-              'taskemail' => $taskemail,
-              'tasktext' => $tasktext,
-              'regdate' => $regdate
+              'taskname' => $_POST['taskname'],
+              'taskemail' => $_POST['taskemail'],
+              'tasktext' => $_POST['tasktext'],
+              'regdate' => time()
             );
 
             if ($_COOKIE['user_login'] != ""){

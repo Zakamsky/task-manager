@@ -7,6 +7,8 @@
  */
 class Controller_Edittask extends Controller{
 
+
+
     function action_index(){
         $this->view->generate('edittask_view.php', 'template_view.php');
     }

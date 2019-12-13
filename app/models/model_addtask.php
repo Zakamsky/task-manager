@@ -8,9 +8,7 @@
 class Model_Addtask extends Model{
 
     public function add_task($task){
-        global $db; //todo: что то с этим надо сделать
-
-
+        $db = self::db();
 
         if(isset($task['user_login'])){
             $user_login = $task['user_login'];
@@ -22,9 +20,9 @@ class Model_Addtask extends Model{
             $user_id = 0;
         }
 
-        $taskname = $task['taskname'];
-        $taskemail = $task['taskemail'];
-        $tasktext = $task['tasktext'];
+        $taskname = mysqli_real_escape_string($db, $task['taskname']);
+        $taskemail = mysqli_real_escape_string($db, $task['taskemail']);
+        $tasktext = mysqli_real_escape_string($db, $task['tasktext']);
         $regdate = $task['regdate'];
 
         $sql = "INSERT INTO t_tasks SET user_id = '$user_id', user_name = '$taskname', task_email = '$taskemail', task_text = '$tasktext', task_date = '$regdate'";

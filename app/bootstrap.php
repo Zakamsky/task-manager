@@ -10,7 +10,6 @@ define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'beejeetest_bjtdb');
 define('DB_PASSWORD', 'beejeetest-der-password');
 define('DB_DATABASE', 'beejeetest_bjtdb');
-$db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
 
 require_once 'core/model.php';
 require_once 'core/view.php';

@@ -8,9 +8,11 @@
 class Model_Login extends Model{
 
     public function get_user($myusername){
-        global $db; //todo: что то с этим надо сделать
+        $db = self::db();
 
-        $sql = "SELECT * FROM t_users WHERE user_login = '$myusername'";
+        $username = mysqli_real_escape_string($db, $myusername);
+
+        $sql = "SELECT * FROM t_users WHERE user_login = '$username'";
         $result = mysqli_query($db,$sql);
         $user = mysqli_fetch_array($result,MYSQLI_ASSOC);
 

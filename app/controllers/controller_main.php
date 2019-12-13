@@ -5,7 +5,7 @@
  * Date: 11.12.2019
  * Time: 23:44
  */
-define('task_per_page', 3); //todo: что то с этим сделать
+define('task_per_page', 3);
 
 class Controller_Main extends Controller{
 
@@ -18,10 +18,21 @@ class Controller_Main extends Controller{
 
     function action_index(){
 
-//        $data[0] = $this->model->get_data();
-//        $total_pages = $this->model->get_totalpages();
+        $get = array();
+
+        if (isset($_GET['sort'])){
+            $get['sort'] = $_GET['sort'];
+        };
+        if (isset($_GET['order'])){
+            $get['order'] = $_GET['order'];
+        };
+
+        if(isset($_GET['page'])){
+            $get['page'] = $_GET['page'];
+        }
+
         $data = array(
-            "tasks" => $this->model->get_data(),
+            "tasks" => $this->model->get_data($get),
             "total_pages" => $this->model->get_totalpages()
         );
 

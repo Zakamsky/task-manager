@@ -9,7 +9,7 @@ class Model_Main extends Model{
 
     // получает кол-во строк из таблицы заданий, для пагинации.
     public function get_totalpages(){
-        global $db; //todo: что то с этим надо сделать
+        $db = self::db();
 
         $rows = mysqli_query($db,"SELECT  count(id) from t_tasks");
         $all_rows = mysqli_fetch_array($rows);
@@ -19,24 +19,23 @@ class Model_Main extends Model{
         return $total_pages;
     }
 
-    public function get_data(){
-        global $db; //todo: что то с этим надо сделать
+    public function get_data($get){
+        $db = self::db();
         // составляем запрос в базу
         // все задачи
         $sql = "SELECT * FROM t_tasks";
 
-        // todo: перенести в контроллер
         //сортировка
-        if (isset($_GET['sort'])){
-            $sql .= " ORDER BY ".$_GET['sort'];
+        if (isset($get['sort'])){
+            $sql .= " ORDER BY ".$get['sort'];
         };
-        if (isset($_GET['order'])){
-            $sql .= ' '.$_GET['order'];
+        if (isset($get['order'])){
+            $sql .= ' '.$get['order'];
         };
 
         // пагинация:
-        if(isset($_GET['page'])){
-            $page = $_GET['page'];
+        if(isset($get['page'])){
+            $page = $get['page'];
         }else{
             $page = 1;
         }
