@@ -25,6 +25,7 @@ class Model_Main extends Model{
         // все задачи
         $sql = "SELECT * FROM t_tasks";
 
+        // todo: перенести в контроллер
         //сортировка
         if (isset($_GET['sort'])){
             $sql .= " ORDER BY ".$_GET['sort'];

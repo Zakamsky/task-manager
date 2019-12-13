@@ -20,7 +20,6 @@ class Login {
             $result = mysqli_query($db,$sql);
             $user = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
-//            $message = "1";
             if ($user['user_passhash'] === md5($mypassword.":::".$user['user_salt'])) {
                 $message = '<div class="d-flex h100 p-5">
                                 <div class="m-auto text-center">

@@ -53,14 +53,14 @@
                         <?php
                         echo '
                                     <a class="nav-item nav-link" href="/">Home</a>
-                                    <a class="nav-item nav-link" href="/?m=addtask">add task</a>
+                                    <a class="nav-item nav-link" href="/addtask">add task</a>
                                     ';
                         if(isset($_COOKIE['user_login'])){
-                            echo '<span class="avtorized ml-auto">you are logged as '.$_COOKIE['user_login'].' <a class="btn btn-outline-light" href="/?m=logout">logout</a> </span>';
+                            echo '<span class="avtorized ml-auto">you are logged as '.$_COOKIE['user_login'].' <a class="btn btn-outline-light" href="/logout">logout</a> </span>';
                         } else {
                             echo '
-                                        <a class="nav-item nav-link" href="/?m=login">login</a>
-                                        <a class="nav-item nav-link" href="/?m=registration">registration</a>
+                                        <a class="nav-item nav-link" href="/login">login</a>
+                                        <a class="nav-item nav-link" href="/registration">registration</a>
                                     ';
                         };
                         ?>
