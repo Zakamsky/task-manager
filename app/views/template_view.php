@@ -34,7 +34,7 @@
             min-height: 55px;
         }
         .task-row{
-            height: 390px;
+            min-height: 390px;
             align-items: stretch;
         }
     </style>

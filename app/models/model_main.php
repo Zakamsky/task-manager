@@ -28,6 +28,8 @@ class Model_Main extends Model{
         //сортировка
         if (isset($get['sort'])){
             $sql .= " ORDER BY ".$get['sort'];
+        } else{
+            $sql .= " ORDER BY task_date";
         };
         if (isset($get['order'])){
             $sql .= ' '.$get['order'];
